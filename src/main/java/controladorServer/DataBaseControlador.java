@@ -12,7 +12,7 @@ public class DataBaseControlador {
      * @throws SQLException
      */
     public static void startDb() throws SQLException {
-        Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers").start();
+        Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers","-tcpDaemon", "-ifNotExists").start();
     }
 
     /**

@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class DataBaseServices {
     private static DataBaseServices instancia;
-    private String URL = "jdbc:h2:tcp://localhost/~/CarritoCompraSessiones"; //Modo Server...
+    private String URL = "jdbc:h2:tcp://localhost/~/CarritoCompraSessionesPractica2"; //Modo Server...
 
 
     private  DataBaseServices(){

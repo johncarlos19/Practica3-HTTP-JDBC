@@ -36,10 +36,17 @@ public class Mercado {
         setCarroCompras((ArrayList<CarroCompra>) new CarroCompraServicios().listaCarroCompra().clone());
         setVentasProductos((ArrayList<VentasProductos>) new VentasProductosServicios().listaVentasProductos());
         Usuario aux = new UsuarioServicios().getUsuario("admin");
-        if (verificar_user(aux.getNombre(), aux.getPassword()) == false){
+        try{
+            if (verificar_user(aux.getNombre(), aux.getPassword()) == false){
+                new UsuarioServicios().crearUsuario(new Usuario("admin", "Admin", "admin"));
+                usuario.add(new Usuario("admin", "Admin", "admin"));
+            }
+        }catch (NullPointerException E){
             new UsuarioServicios().crearUsuario(new Usuario("admin", "Admin", "admin"));
             usuario.add(new Usuario("admin", "Admin", "admin"));
+
         }
+
 
     }
 
